@@ -1,8 +1,8 @@
-# GitHub Action to Upload zip to AWS S3 and manifest to `dcc-content` After a Release is Published
+# GitHub Action to upload zip to AWS S3 and manifest to a public repository after a release is published
 
 This GitHub Action enables you to release a Foundry VTT System or Module by simply updating the 'version.txt' file in your main branch.
 
-This is to be used with the `foundry-release-action` which greates a GitHub release, and runs after a release is published to copy the manifest into main with the latest version information.
+This is to be used with the `foundry-release-action` which creates a GitHub release, and runs after a release is published to copy the manifest into main with the latest version information.
 
 ## Install Instructions
 
@@ -38,8 +38,6 @@ jobs:
 ```
 
 For `manifestFileName` you will either enter `system.json` or `module.json` depending on your project.
-
-`repository` should also not change - it is the target repo for manifest files.
 
 You should not need to change `actionToken` from the example above.
 
