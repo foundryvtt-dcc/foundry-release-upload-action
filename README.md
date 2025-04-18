@@ -28,6 +28,7 @@ jobs:
         with:
           ref: main
           repository: foundryvtt-dcc/dcc-content
+            token: ${{ secrets.WRITE_CAPABLE_TOKEN }}
 
       - name: Foundry Manifest Update
         id: foundry-manifest-update
@@ -38,6 +39,8 @@ jobs:
 ```
 
 For `manifestFileName` you will either enter `system.json` or `module.json` depending on your project.
+
+The token for the Checkout step is a token with write permissions to the **public** repository. This is usually a personal access token (PAT) that you create in your GitHub account settings.
 
 You should not need to change `actionToken` from the example above.
 
