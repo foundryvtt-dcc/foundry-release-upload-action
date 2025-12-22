@@ -57,7 +57,12 @@ async function uploadManifest (latestRelease) {
     fs.writeFileSync(`${repo}/${latestRelease.data.tag_name}/RELEASE_NOTES.md`, releaseNotes, 'utf8')
 
     // Also copy manifest to root folder for easy access to latest version
-    fs.copyFileSync(manifestLocalFileName, `./${repo}/${manifestFileName}`)
+    if (fs.existsSync(manifestLocalFileName)) {
+      fs.copyFileSync(manifestLocalFileName, `./${repo}/${manifestFileName}`)
+      console.log(`Copied manifest to root: ./${repo}/${manifestFileName}`)
+    } else {
+      core.setFailed(`Manifest file not found: ${manifestLocalFileName}`)
+    }
 
     // Commit and push updated manifest
     await shell.exec(`git config user.email "${committer_email}"`)
