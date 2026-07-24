@@ -1,6 +1,7 @@
 {
   "name": "foundry-release-upload-action",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "type": "module",
   "description": "GitHub Action to Upload Foundry VTT Manifest and Zip After a Release is Published",
   "main": "index.js",
   "repository": {

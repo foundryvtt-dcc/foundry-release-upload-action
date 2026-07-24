@@ -1,10 +1,10 @@
 // noinspection JSUnresolvedFunction,JSIgnoredPromiseFromCall
 
-const core = require('@actions/core')
-const fs = require('fs')
-const github = require('@actions/github')
-const shell = require('shelljs')
-const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
+import * as core from '@actions/core'
+import fs from 'fs'
+import * as github from '@actions/github'
+import shell from 'shelljs'
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
 
 const awsAccessKeyId = core.getInput('awsAccessKeyId')
 const awsAccessSecret = core.getInput('awsAccessSecret')
